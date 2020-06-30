@@ -1,9 +1,7 @@
 import java.util.*;
+public class prot {
 
-public class prot{
-
-
-		public static void main(String[] args) throws IllegalAccessException {
+	public static void main(String[] args) throws IllegalAccessException {
 		Scanner input = new Scanner(System.in);
 		// object variable to store the result of the operation
 		fraction_ result;
@@ -66,15 +64,15 @@ public class prot{
 	// Ask the user to enter in a valid mathematical operation. if the user enters
 	// anything expect "+","-".
 	public static String getOperation(Scanner input) {
-		System.out.print("Please enter an operation (+,-,/,*,= or Q to quit) : ");
+		System.out.print("Please enter an operation (+,-,/,*,= or q  to quit) : ");
 		String operation = input.next();
 
 		while (!operation.equals("+") && !operation.equals("-") && !operation.equals("/") && !operation.equals("*")
-				&& !operation.equals("=") && !operation.equals("Q")) {
+				&& !operation.equals("=")) {
 			if (operation.equals("q"))
 				System.exit(1);
 
-			System.out.print("Invalid input(+,-,/,*,= or Q to quit) : ");
+			System.out.print("\n Invalid input(+,-,/,*,= or Q to quit) : ");
 			operation = input.next();
 		}
 		return operation;
@@ -84,16 +82,21 @@ public class prot{
 	// any positive int
 	public static boolean ValidFraction(String input) {
 		if (input.substring(1).contains("-")) {
-			System.out.println("Please check for - " + input.substring(1));
+			System.out.println("Please check for - : " + input.substring(1));
 			return false;
 		} else if (input.contains("/")) {
 			int i = input.indexOf("/");
+			if(input.substring(i+1).contains("/"))
+			{
+				System.out.println("Please check for / : " + input.substring(i+1));
+				return false;
+			}
 			String num = input.substring(0, i);
 			String den = input.substring(i + 1);
 			return isNumber(num) && isNumber(den) && !den.equals(0);
 		} else if (!input.contains("/")) {
 			if (input.charAt(0) == '-') {
-				String num = input.substring(1);
+				String num = input.substring(0);
 				System.out.println("num in Valid Fraction method " + num);
 				return isNumber(num);
 			} else {
@@ -149,15 +152,16 @@ public class prot{
 
 }
 
+
 //fraction is an object that holds the information about a fraction (numerator and denominator)
 
 class fraction_ {
 	private int numerator;
 	private int denominator;
 
-//Constructors
+	//Constructors
 
-//a two parameter constructor that initializes the numerator and denominator as ints
+	//a two parameter constructor that initializes the numerator and denominator as ints
 	public fraction_(int num, int deno) {
 		if (deno == 0)
 			throw new IllegalArgumentException("0 is not allowed as denominator");
@@ -274,3 +278,4 @@ class fraction_ {
 	}
 
 }
+
