@@ -3,7 +3,7 @@ To perform Arithmetic Operations on Fractions
 ## Description
 ---
 
-This project is designed to help you practice building your own object class and testing it with a client class.There will be two classes ,one called Fraction and the other called FractionCalculator.The Fraction class is an object that holds information about a fraction (numerator and denominator).It will allow the user to enter in fractions and operations ,calculating and displaying the result. The FractionCalculator, a client class will create a object of Fraction class and will test it.It will perform  addition , subtration , divide , multiply and reduce the fration to its lowest form.
+This project is designed to help practice building our own object class and testing it with a client class.There will be two classes ,one called Fraction and the other called FractionCalculator.The Fraction class is an object that holds information about a fraction (numerator and denominator).It will allow the user to enter in fractions and operations ,calculating and displaying the result. The FractionCalculator, a client class will create a object of Fraction class and will test it.It will perform  addition , subtration , divide , multiply and reduce the fration to its lowest form.
 
 ---
 ## Introduction
